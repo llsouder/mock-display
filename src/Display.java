@@ -7,12 +7,13 @@ public class Display extends JPanel {
     Display(State state) {
         this.state = state;
         this.setSize(400, 400);
-        this.setBackground(Color.black);
+        this.setBackground(Color.gray);
     }
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         state.datablock.paint(g);
+        state.icons.forEach(icon -> icon.paint(g, this));
         displayCoordinates(g, state.pointDisplay);
         //centeredDot(g, state.dataPoint);
         state.datablock.line(g, state.dataPoint);

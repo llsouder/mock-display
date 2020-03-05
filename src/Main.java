@@ -1,9 +1,10 @@
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
+import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         State state = new State();
         Display display = new Display(state);
         MouseListener allEars = new MouseListener(state, display);
